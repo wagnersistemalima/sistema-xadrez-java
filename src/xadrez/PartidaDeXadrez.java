@@ -15,9 +15,9 @@ public class PartidaDeXadrez {										// coração do sistema de xadrez / onde v
 	}
 	
 	public PecaDeXadrez[][] getPecas() {
-		PecaDeXadrez[][] mat = new PecaDeXadrez[tabuleiro.getLinha()][tabuleiro.getColuna()];
-		for (int i=0; i<tabuleiro.getLinha(); i++) {
-			for (int j=0; j<tabuleiro.getColuna(); j++) {
+		PecaDeXadrez[][] mat = new PecaDeXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
+		for (int i=0; i<tabuleiro.getLinhas(); i++) {
+			for (int j=0; j<tabuleiro.getColunas(); j++) {
 				mat[i][j] = (PecaDeXadrez) tabuleiro.peca(i, j);
 			}
 		}
