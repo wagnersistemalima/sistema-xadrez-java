@@ -5,7 +5,7 @@ public class Peca {
 	protected Posicao posicao;									// tipo simples da matriz, não pode ser visivel
 	private Tabuleiro tabuleiro;
 	
-	public Peca(Tabuleiro tabuleiro) {
+	public Peca(Tabuleiro tabuleiro) {							// para criar uma peça eu tenho que informar o tabuleiro
 		this.tabuleiro = tabuleiro;
 		posicao = null;
 	}
