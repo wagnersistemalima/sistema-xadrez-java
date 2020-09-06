@@ -30,6 +30,12 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 	
+	// https://stackoverflow.com/questions/2979383/java-clear-the-console
+	public static void clearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	}
+	
 	public static XadrezPosicao leiaPosicaoDoXadrez(Scanner sc) {
 		try {
 		
@@ -39,7 +45,7 @@ public class UI {
 		return new XadrezPosicao(coluna, linha);
 		}
 		catch (RuntimeException e) {
-			throw new InputMismatchException("Erro lendo a posição do xadrez. Valores valido são de a1 à h8.");
+			throw new InputMismatchException("Erro lendo a posicao do xadrez. Valores validos sao de a1 a h8.");
 		}
 	}
 
@@ -53,6 +59,7 @@ public class UI {
 			System.out.println(); // para quebrar linha e passar p/ 8 7 6 5 4 3 2 1
 		}
 		System.out.print("  a b c d e f g h");
+		System.out.println();
 	}
 
 	public static void printPeca(PecaDeXadrez peca) { // imprimir uma peca.
