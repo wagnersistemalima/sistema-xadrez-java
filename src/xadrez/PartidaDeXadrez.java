@@ -25,6 +25,12 @@ public class PartidaDeXadrez {										// coração do sistema de xadrez / onde v
 		return mat;
 	}
 	
+	public boolean[][] possiveisMovimentos(XadrezPosicao origemPosicao) {
+		Posicao posicao = origemPosicao.posicionar();
+		validacaoPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).possivelMovimento();
+	}
+	
 	public PecaDeXadrez perfomaceXadrezMovimento(XadrezPosicao posicaoOrigem, XadrezPosicao posicaoDestino) {
 		Posicao origem = posicaoOrigem.posicionar();
 		Posicao destino = posicaoDestino.posicionar();
